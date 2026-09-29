@@ -46,6 +46,12 @@ body {
   overflow-x: clip;
 }
 
+/* Il nastro inclinato sborda ai lati: senza questo, su smartphone la pagina
+   diventerebbe più larga dello schermo e il browser la rimpicciolirebbe */
+main {
+  overflow-x: clip;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -72,15 +78,27 @@ a {
 .intestazione {
   position: fixed;
   inset: 0 0 auto;
-  z-index: 50;
-  transition: background-color 0.35s, box-shadow 0.35s, backdrop-filter 0.35s;
+  z-index: 1000;
 }
 
-.intestazione.scorrendo {
+/* Lo sfondo sfocato sta su uno pseudo-elemento e non sull'intestazione:
+   un backdrop-filter sull'intestazione farebbe da riferimento al menu mobile
+   (position: fixed), che resterebbe alto quanto la barra invece che quanto lo schermo */
+.intestazione::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-color: rgba(11, 11, 12, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--grigio-bordo);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.intestazione.scorrendo::before {
+  opacity: 1;
 }
 
 .intestazione-riga {
@@ -1815,13 +1833,23 @@ html:not(.js) .barra span {
   .menu-pulsante[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-pulsante[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
+  /* Logo e pulsante restano visibili sopra il menu aperto */
+  .logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Menu a schermo intero: sfondo pieno e opaco sopra tutta la pagina, a qualsiasi punto dello scroll */
   .navigazione {
     position: fixed;
     inset: 0;
+    z-index: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(11, 11, 12, 0.97);
+    background-color: var(--nero);
     clip-path: circle(0 at calc(100% - 42px) 36px);
     visibility: hidden;
     transition: clip-path 0.6s var(--curva), visibility 0s 0.6s;
@@ -1834,15 +1862,21 @@ html:not(.js) .barra span {
   }
 
   .navigazione ul {
+    /* margin: auto centra le voci ma, se lo schermo è basso, lascia scorrere senza tagliare la prima */
+    margin: auto;
+    padding: calc(var(--altezza-intestazione) + 1rem) 0 2rem;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: min(1.25rem, 2.5vh);
   }
 
   .navigazione a {
+    display: block;
     font-family: var(--font-titoli);
     font-weight: 400;
-    font-size: 2.4rem;
+    /* Si rimpicciolisce sugli schermi bassi così tutte le voci stanno nello schermo */
+    font-size: min(2.4rem, 5.5vh);
+    line-height: 1.15;
     letter-spacing: 0.03em;
   }
 
@@ -1875,6 +1909,22 @@ html:not(.js) .barra span {
     transform: none;
     font-size: 1.05rem;
     padding: 2rem 0.75rem 0.6rem;
+  }
+}
+
+/* Smartphone in orizzontale: lo schermo è troppo basso per 7 voci in colonna,
+   quindi il menu le dispone su due colonne */
+@media (max-width: 860px) and (max-height: 500px) and (orientation: landscape) {
+  .navigazione ul {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
+    gap: 0.4rem 3.5rem;
+    padding: calc(var(--altezza-intestazione) + 0.5rem) 0 1rem;
+  }
+
+  .navigazione a {
+    font-size: 1.9rem;
   }
 }
 

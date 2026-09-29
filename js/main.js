@@ -9,6 +9,7 @@ const menuPulsante = document.querySelector(".menu-pulsante");
 const navigazione = document.querySelector(".navigazione");
 
 function impostaMenu(aperto) {
+  if (aperto) navigazione.scrollTop = 0; // riparte sempre dalla prima voce
   navigazione.classList.toggle("aperta", aperto);
   menuPulsante.setAttribute("aria-expanded", aperto);
   menuPulsante.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
