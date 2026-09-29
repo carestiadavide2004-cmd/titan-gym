@@ -248,6 +248,20 @@ aggiornaPulsantiAltro();
 window.addEventListener("resize", aggiornaPulsantiAltro);
 document.fonts?.ready.then(aggiornaPulsantiAltro);
 
+/* ---------- Banner offerta di lancio: porta a "Piani e prezzi" ---------- */
+
+const bannerPromo = document.querySelector(".banner-promo");
+const sezionePrezzi = document.querySelector("#prezzi");
+
+function vaiAiPrezzi() {
+  sezionePrezzi.scrollIntoView({ behavior: menoMovimento ? "auto" : "smooth" });
+}
+
+bannerPromo.addEventListener("click", vaiAiPrezzi);
+bannerPromo.addEventListener("keydown", (evento) => {
+  if (evento.key === "Enter") vaiAiPrezzi();
+});
+
 /* ---------- Pulsanti che preselezionano il motivo nel modulo ---------- */
 
 const selectMotivo = document.querySelector("#motivo");

@@ -1209,6 +1209,12 @@ body.lightbox-aperta {
   background: linear-gradient(90deg, rgba(198, 255, 0, 0.08) 0%, var(--grigio) 50%, rgba(198, 255, 0, 0.08) 100%);
   border: 2px solid var(--neon);
   text-align: center;
+  cursor: pointer;
+}
+
+.banner-promo:focus-visible {
+  outline: 2px solid var(--arancio);
+  outline-offset: 4px;
 }
 
 .js .banner-promo.rivela.visibile {
