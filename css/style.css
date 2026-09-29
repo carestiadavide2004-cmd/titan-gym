@@ -1196,6 +1196,54 @@ body.lightbox-aperta {
   width: 100%;
 }
 
+/* Banner promozionale */
+
+.banner-promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 820px;
+  margin: 0 auto clamp(2.5rem, 6vw, 3.5rem);
+  padding: 1.1rem 1.5rem;
+  background: linear-gradient(90deg, rgba(198, 255, 0, 0.08) 0%, var(--grigio) 50%, rgba(198, 255, 0, 0.08) 100%);
+  border: 2px solid var(--neon);
+  text-align: center;
+}
+
+.js .banner-promo.rivela.visibile {
+  animation: promo-pulsa 3s ease-in-out 1s infinite;
+}
+
+.banner-promo-etichetta {
+  flex-shrink: 0;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--arancio);
+  color: var(--nero);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  box-shadow: 0 0 16px rgba(255, 106, 0, 0.5);
+}
+
+.banner-promo-testo {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-weight: 600;
+}
+
+.banner-promo-testo strong {
+  color: var(--neon);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes promo-pulsa {
+  0%, 100% { box-shadow: 0 0 18px rgba(198, 255, 0, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(198, 255, 0, 0.4); }
+}
+
 /* ---------- Contatti ---------- */
 
 .contatti {
@@ -1929,6 +1977,11 @@ html:not(.js) .barra span {
 }
 
 @media (max-width: 560px) {
+  .banner-promo {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
   .hero-azioni .pulsante {
     width: 100%;
   }
