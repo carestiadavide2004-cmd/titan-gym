@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan Gym — Allenati senza limiti</title>
+  <meta name="description" content="Titan Gym: pesistica, functional training, yoga e boxe. Prenota la tua prova gratuita.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Segnala che JavaScript è attivo: solo allora gli elementi partono nascosti per l'animazione di comparsa -->
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <header class="intestazione">
+    <div class="contenitore intestazione-riga">
+      <a href="#home" class="logo">TITAN<span>GYM</span></a>
+
+      <button type="button" class="menu-pulsante" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navigazione" id="navigazione" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#chi-siamo">Chi siamo</a></li>
+          <li><a href="#corsi">Corsi</a></li>
+          <li><a href="#galleria">Galleria</a></li>
+          <li><a href="#prezzi">Prezzi</a></li>
+          <li><a href="#recensioni">Recensioni</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HOME ========== -->
+    <section class="hero" id="home">
+      <div class="hero-sfondo" aria-hidden="true"></div>
+      <div class="hero-velo" aria-hidden="true"></div>
+
+      <div class="contenitore hero-contenuto">
+        <p class="hero-occhiello">Palestra &middot; Milano</p>
+        <h1 class="hero-titolo">
+          <span>Supera</span>
+          <span class="hero-titolo-accento">i tuoi</span>
+          <span>limiti</span>
+        </h1>
+        <p class="hero-testo">Attrezzature di ultima generazione, coach certificati e un'energia che non trovi altrove. Il tuo allenamento inizia qui.</p>
+        <div class="hero-azioni">
+          <a href="#contatti" class="pulsante pulsante--neon" data-motivo="prova">
+            <span>Prova gratuita</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#corsi" class="pulsante pulsante--contorno">Scopri i corsi</a>
+        </div>
+      </div>
+
+      <a href="#chi-siamo" class="hero-scorri" aria-label="Scorri alla sezione successiva"><span></span></a>
+    </section>
+
+    <!-- Striscia di parole in movimento -->
+    <div class="nastro" aria-hidden="true">
+      <div class="nastro-traccia">
+        <span>Forza</span><span>Disciplina</span><span>Energia</span><span>Resistenza</span><span>Passione</span>
+        <span>Forza</span><span>Disciplina</span><span>Energia</span><span>Resistenza</span><span>Passione</span>
+      </div>
+    </div>
+
+    <!-- ========== CHI SIAMO ========== -->
+    <section class="sezione" id="chi-siamo">
+      <div class="contenitore chi-siamo">
+        <div class="chi-siamo-testo rivela">
+          <p class="etichetta-sezione">Chi siamo</p>
+          <h2 class="titolo-sezione">Più di una palestra.<br><em>Una squadra.</em></h2>
+          <p>Titan Gym nasce nel 2011 da un gruppo di atleti e allenatori con un'idea semplice: creare un posto dove chiunque, dal principiante all'agonista, possa allenarsi seriamente e sentirsi a casa.</p>
+          <p>1.200 m² di spazio, zone dedicate a pesi liberi, functional e sport da combattimento, e un team di coach che ti segue passo dopo passo verso il tuo obiettivo.</p>
+        </div>
+
+        <ul class="contatori">
+          <li class="contatore rivela">
+            <span class="contatore-numero"><span data-conta="500">0</span>+</span>
+            <span class="contatore-etichetta">Iscritti attivi</span>
+          </li>
+          <li class="contatore rivela" data-ritardo="1">
+            <span class="contatore-numero"><span data-conta="15">0</span></span>
+            <span class="contatore-etichetta">Anni di esperienza</span>
+          </li>
+          <li class="contatore rivela" data-ritardo="2">
+            <span class="contatore-numero"><span data-conta="20">0</span></span>
+            <span class="contatore-etichetta">Corsi settimanali</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== CORSI ========== -->
+    <section class="sezione sezione--scura" id="corsi">
+      <div class="contenitore">
+        <div class="intestazione-sezione rivela">
+          <p class="etichetta-sezione">I nostri corsi</p>
+          <h2 class="titolo-sezione">Scegli la tua <em>disciplina</em></h2>
+        </div>
+
+        <div class="corsi">
+          <article class="corso rivela">
+            <div class="corso-icona">
+              <!-- Manubrio -->
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18v12M11 13v22M37 13v22M42 18v12M11 24h26"/></svg>
+            </div>
+            <h3>Pesistica</h3>
+            <p>Tecnica, forza e massa muscolare con bilancieri, manubri e rack professionali. Programmi su misura per ogni livello.</p>
+            <span class="corso-info">Lun &middot; Mer &middot; Ven</span>
+            <a href="#corso-pesistica" class="corso-link">Orari e dettagli<span class="solo-lettori"> del corso di Pesistica</span> <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <article class="corso rivela" data-ritardo="1">
+            <div class="corso-icona">
+              <!-- Kettlebell -->
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 17a7 7 0 0 1 14 0"/><path d="M14 22h20l3 8a11 11 0 0 1-10.4 12h-5.2A11 11 0 0 1 11 30z"/></svg>
+            </div>
+            <h3>Functional training</h3>
+            <p>Circuiti ad alta intensità con kettlebell, corde e box jump per migliorare potenza, agilità e resistenza.</p>
+            <span class="corso-info">Tutti i giorni</span>
+            <a href="#corso-functional" class="corso-link">Orari e dettagli<span class="solo-lettori"> del corso di Functional training</span> <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <article class="corso rivela" data-ritardo="2">
+            <div class="corso-icona">
+              <!-- Figura in posizione yoga -->
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="9" r="4"/><path d="M24 15v13M11 22l13 3 13-3M12 38c4-6 8-9 12-10 4 1 8 4 12 10M10 38h28"/></svg>
+            </div>
+            <h3>Yoga</h3>
+            <p>Mobilità, respirazione e concentrazione. Lezioni di Hatha e Vinyasa per ritrovare equilibrio dentro e fuori.</p>
+            <span class="corso-info">Mar &middot; Gio &middot; Sab</span>
+            <a href="#corso-yoga" class="corso-link">Orari e dettagli<span class="solo-lettori"> del corso di Yoga</span> <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <article class="corso rivela" data-ritardo="3">
+            <div class="corso-icona">
+              <!-- Guantone da boxe -->
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 34V18a10 10 0 0 1 10-10h3a10 10 0 0 1 10 10v7a9 9 0 0 1-9 9z"/><path d="M15 26h-2a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h2M15 34h14v6H15zM22 18h9"/></svg>
+            </div>
+            <h3>Boxe</h3>
+            <p>Sacco, pao e sparring controllato: il modo più intenso per scaricare lo stress, bruciare calorie e costruire fiducia.</p>
+            <span class="corso-info">Lun &middot; Mer &middot; Ven &middot; Sab</span>
+            <a href="#corso-boxe" class="corso-link">Orari e dettagli<span class="solo-lettori"> del corso di Boxe</span> <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DETTAGLIO CORSI (si raggiunge cliccando le schede) ========== -->
+    <section class="sezione sezione--dettagli" id="dettagli-corsi" data-menu="corsi" aria-label="Orari e dettagli dei corsi">
+      <div class="contenitore">
+        <div class="dettagli">
+          <article class="dettaglio rivela" id="corso-pesistica">
+            <div class="dettaglio-testo">
+              <div class="dettaglio-titolo">
+                <div class="corso-icona">
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18v12M11 13v22M37 13v22M42 18v12M11 24h26"/></svg>
+                </div>
+                <h3>Pesistica</h3>
+              </div>
+              <p>Il cuore di Titan Gym. Impari i grandi movimenti fondamentali – squat, stacco, panca, lento avanti – con una progressione che parte dalla tecnica e arriva a carichi importanti, senza mai trascurare la sicurezza.</p>
+              <p>Ogni lezione prevede riscaldamento specifico, lavoro tecnico con il coach, una parte di forza a serie e ripetizioni programmate e un finale di mobilità. Ideale per chi vuole diventare più forte, aumentare la massa muscolare o prepararsi alle gare di powerlifting.</p>
+              <ul class="dettaglio-dati">
+                <li><strong>75 min</strong><span>Durata</span></li>
+                <li><strong>Tutti</strong><span>Livello</span></li>
+                <li><strong>Marco R.</strong><span>Coach</span></li>
+              </ul>
+              <div class="dettaglio-azioni">
+                <a href="#contatti" class="pulsante pulsante--neon" data-motivo="prova"><span>Prenota una prova</span></a>
+                <a href="#corsi" class="dettaglio-torna">&larr; Tutti i corsi</a>
+              </div>
+            </div>
+            <div class="dettaglio-orari">
+              <h4>Orari settimanali</h4>
+              <table class="orari orari--corso">
+                <thead>
+                  <tr><th scope="col">Giorno</th><th scope="col">Orario</th><th scope="col">Tipo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Lunedì</th><td>18:30 – 19:45</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Mercoledì</th><td>07:00 – 08:15</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Mercoledì</th><td>18:30 – 19:45</td><td>Intermedio</td></tr>
+                    <tr><th scope="row">Venerdì</th><td>18:30 – 19:45</td><td>Tutti i livelli</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="dettaglio rivela" id="corso-functional">
+            <div class="dettaglio-testo">
+              <div class="dettaglio-titolo">
+                <div class="corso-icona">
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 17a7 7 0 0 1 14 0"/><path d="M14 22h20l3 8a11 11 0 0 1-10.4 12h-5.2A11 11 0 0 1 11 30z"/></svg>
+                </div>
+                <h3>Functional training</h3>
+              </div>
+              <p>Allenamento a circuito che usa il corpo come strumento principale, insieme a kettlebell, corde navali, sandbag, box e TRX. I movimenti riproducono gesti della vita quotidiana e sportiva: spingere, tirare, saltare, sollevare.</p>
+              <p>Lezioni dinamiche in piccoli gruppi, con esercizi sempre diversi e intensità adattabile a ognuno. Perfetto per bruciare calorie, migliorare resistenza, coordinazione ed esplosività.</p>
+              <ul class="dettaglio-dati">
+                <li><strong>45 min</strong><span>Durata</span></li>
+                <li><strong>Tutti</strong><span>Livello</span></li>
+                <li><strong>Giulia B.</strong><span>Coach</span></li>
+              </ul>
+              <div class="dettaglio-azioni">
+                <a href="#contatti" class="pulsante pulsante--neon" data-motivo="prova"><span>Prenota una prova</span></a>
+                <a href="#corsi" class="dettaglio-torna">&larr; Tutti i corsi</a>
+              </div>
+            </div>
+            <div class="dettaglio-orari">
+              <h4>Orari settimanali</h4>
+              <table class="orari orari--corso">
+                <thead>
+                  <tr><th scope="col">Giorno</th><th scope="col">Orario</th><th scope="col">Tipo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Lunedì</th><td>07:00 – 07:45</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Martedì</th><td>19:30 – 20:15</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Mercoledì</th><td>13:00 – 13:45</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Giovedì</th><td>07:00 – 07:45</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Venerdì</th><td>19:30 – 20:15</td><td>Avanzato</td></tr>
+                    <tr><th scope="row">Sabato</th><td>10:00 – 10:45</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Domenica</th><td>10:00 – 10:45</td><td>Tutti i livelli</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="dettaglio rivela" id="corso-yoga">
+            <div class="dettaglio-testo">
+              <div class="dettaglio-titolo">
+                <div class="corso-icona">
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="9" r="4"/><path d="M24 15v13M11 22l13 3 13-3M12 38c4-6 8-9 12-10 4 1 8 4 12 10M10 38h28"/></svg>
+                </div>
+                <h3>Yoga</h3>
+              </div>
+              <p>Uno spazio per rallentare, respirare e ascoltare il corpo. Le lezioni alternano l'Hatha, più statico e focalizzato sull'allineamento, al Vinyasa, fluido e dinamico, in cui ogni movimento segue il respiro.</p>
+              <p>Migliora flessibilità, postura ed equilibrio, riduce lo stress ed è il complemento ideale per chi si allena con i pesi o pratica sport da combattimento. Tappetini e attrezzi sono forniti dalla palestra.</p>
+              <ul class="dettaglio-dati">
+                <li><strong>60 min</strong><span>Durata</span></li>
+                <li><strong>Tutti</strong><span>Livello</span></li>
+                <li><strong>Elena M.</strong><span>Insegnante</span></li>
+              </ul>
+              <div class="dettaglio-azioni">
+                <a href="#contatti" class="pulsante pulsante--neon" data-motivo="prova"><span>Prenota una prova</span></a>
+                <a href="#corsi" class="dettaglio-torna">&larr; Tutti i corsi</a>
+              </div>
+            </div>
+            <div class="dettaglio-orari">
+              <h4>Orari settimanali</h4>
+              <table class="orari orari--corso">
+                <thead>
+                  <tr><th scope="col">Giorno</th><th scope="col">Orario</th><th scope="col">Tipo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Martedì</th><td>09:00 – 10:00</td><td>Hatha</td></tr>
+                    <tr><th scope="row">Martedì</th><td>20:00 – 21:00</td><td>Vinyasa</td></tr>
+                    <tr><th scope="row">Giovedì</th><td>09:00 – 10:00</td><td>Hatha</td></tr>
+                    <tr><th scope="row">Giovedì</th><td>20:00 – 21:00</td><td>Vinyasa</td></tr>
+                    <tr><th scope="row">Sabato</th><td>11:00 – 12:00</td><td>Tutti i livelli</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="dettaglio rivela" id="corso-boxe">
+            <div class="dettaglio-testo">
+              <div class="dettaglio-titolo">
+                <div class="corso-icona">
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 34V18a10 10 0 0 1 10-10h3a10 10 0 0 1 10 10v7a9 9 0 0 1-9 9z"/><path d="M15 26h-2a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h2M15 34h14v6H15zM22 18h9"/></svg>
+                </div>
+                <h3>Boxe</h3>
+              </div>
+              <p>Dalla guardia ai colpi base fino alle combinazioni più complesse: un percorso completo di pugilato, con lavoro al sacco, ai colpitori con il maestro, esercizi di gioco di gambe e preparazione atletica specifica.</p>
+              <p>Lo sparring è sempre facoltativo e controllato, con protezioni adeguate. Adatto sia a chi vuole solo allenarsi e scaricare lo stress, sia a chi punta al ring. Guantoni in prestito per le prime lezioni.</p>
+              <ul class="dettaglio-dati">
+                <li><strong>75 min</strong><span>Durata</span></li>
+                <li><strong>Tutti</strong><span>Livello</span></li>
+                <li><strong>Luca D.</strong><span>Maestro</span></li>
+              </ul>
+              <div class="dettaglio-azioni">
+                <a href="#contatti" class="pulsante pulsante--neon" data-motivo="prova"><span>Prenota una prova</span></a>
+                <a href="#corsi" class="dettaglio-torna">&larr; Tutti i corsi</a>
+              </div>
+            </div>
+            <div class="dettaglio-orari">
+              <h4>Orari settimanali</h4>
+              <table class="orari orari--corso">
+                <thead>
+                  <tr><th scope="col">Giorno</th><th scope="col">Orario</th><th scope="col">Tipo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Lunedì</th><td>20:00 – 21:15</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Mercoledì</th><td>20:00 – 21:15</td><td>Tutti i livelli</td></tr>
+                    <tr><th scope="row">Venerdì</th><td>20:00 – 21:15</td><td>Sparring</td></tr>
+                    <tr><th scope="row">Sabato</th><td>15:00 – 16:15</td><td>Principianti</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERIA ========== -->
+    <section class="sezione" id="galleria">
+      <div class="contenitore">
+        <div class="intestazione-sezione rivela">
+          <p class="etichetta-sezione">Galleria</p>
+          <h2 class="titolo-sezione">Dentro <em>Titan</em></h2>
+        </div>
+
+        <div class="galleria">
+          <figure class="galleria-elemento rivela">
+            <img src="https://images.unsplash.com/photo-1623874514711-0f321325f318?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="La sala pesi con panche, rack e bilancieri" loading="lazy" width="800" height="600">
+            <figcaption>Sala pesi</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="1">
+            <img src="https://images.unsplash.com/photo-1578762560042-46ad127c95ea?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Kettlebell, palla medica e corda sul box dell'area functional" loading="lazy" width="800" height="600">
+            <figcaption>Area functional</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="2">
+            <img src="https://images.unsplash.com/photo-1758778932827-52b7e4799fbf?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Due atleti durante lo sparring sul ring" loading="lazy" width="800" height="600">
+            <figcaption>Il ring</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="3">
+            <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Un'allieva in posizione di yoga nella sala dedicata" loading="lazy" width="800" height="600">
+            <figcaption>Sala yoga</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela">
+            <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="La fila di tapis roulant della zona cardio" loading="lazy" width="800" height="600">
+            <figcaption>Zona cardio</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="1">
+            <img src="https://images.unsplash.com/photo-1616279969856-759f316a5ac1?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Un coach segue un'allieva durante un esercizio con il TRX" loading="lazy" width="800" height="600">
+            <figcaption>Personal training</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="2">
+            <img src="https://images.unsplash.com/photo-1781274326569-7120016a6c7e?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Gli spogliatoi con armadietti e panche in legno" loading="lazy" width="800" height="600">
+            <figcaption>Spogliatoi</figcaption>
+          </figure>
+          <figure class="galleria-elemento rivela" data-ritardo="3">
+            <img src="https://images.unsplash.com/photo-1607962815971-449d73b02eb8?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=75" alt="Allenamento alle sbarre nell'area all'aperto" loading="lazy" width="800" height="600">
+            <figcaption>Outdoor</figcaption>
+          </figure>
+        </div>
+        <p class="credito-foto">Foto di esempio da <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+      </div>
+    </section>
+
+    <!-- ========== PIANI E PREZZI ========== -->
+    <section class="sezione sezione--scura" id="prezzi">
+      <div class="contenitore">
+        <div class="intestazione-sezione rivela">
+          <p class="etichetta-sezione">Piani e prezzi</p>
+          <h2 class="titolo-sezione">Il piano <em>giusto</em> per te</h2>
+        </div>
+
+        <div class="piani">
+          <article class="piano rivela">
+            <h3 class="piano-nome">Mensile</h3>
+            <p class="piano-prezzo"><span class="piano-valuta">€</span>49<span class="piano-periodo">/mese</span></p>
+            <p class="piano-nota">Senza vincoli, disdici quando vuoi</p>
+            <ul class="piano-vantaggi">
+              <li>Accesso illimitato sala pesi</li>
+              <li>Area cardio e functional</li>
+              <li>Spogliatoi e docce</li>
+              <li class="escluso">Corsi di gruppo</li>
+              <li class="escluso">Scheda personalizzata</li>
+            </ul>
+            <a href="#contatti" class="pulsante pulsante--contorno" data-motivo="mensile">Scegli mensile</a>
+          </article>
+
+          <article class="piano piano--consigliato rivela" data-ritardo="1">
+            <span class="piano-badge">Consigliato</span>
+            <h3 class="piano-nome">Trimestrale</h3>
+            <p class="piano-prezzo"><span class="piano-valuta">€</span>129<span class="piano-periodo">/3 mesi</span></p>
+            <p class="piano-nota">Solo €43 al mese &middot; risparmi il 12%</p>
+            <ul class="piano-vantaggi">
+              <li>Accesso illimitato sala pesi</li>
+              <li>Area cardio e functional</li>
+              <li>Spogliatoi e docce</li>
+              <li>Tutti i corsi di gruppo</li>
+              <li>Scheda personalizzata</li>
+            </ul>
+            <a href="#contatti" class="pulsante pulsante--neon" data-motivo="trimestrale"><span>Scegli trimestrale</span></a>
+          </article>
+
+          <article class="piano rivela" data-ritardo="2">
+            <h3 class="piano-nome">Annuale</h3>
+            <p class="piano-prezzo"><span class="piano-valuta">€</span>449<span class="piano-periodo">/anno</span></p>
+            <p class="piano-nota">Solo €37 al mese &middot; risparmi il 24%</p>
+            <ul class="piano-vantaggi">
+              <li>Tutto del trimestrale</li>
+              <li>2 sessioni di personal training</li>
+              <li>Analisi della composizione corporea</li>
+              <li>Sospensione fino a 30 giorni</li>
+              <li>Porta un amico gratis 1 volta al mese</li>
+            </ul>
+            <a href="#contatti" class="pulsante pulsante--contorno" data-motivo="annuale">Scegli annuale</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RECENSIONI (solo grafica, recensioni di esempio per la demo) ========== -->
+    <section class="sezione" id="recensioni">
+      <div class="contenitore">
+        <div class="intestazione-sezione rivela">
+          <p class="etichetta-sezione">Recensioni</p>
+          <h2 class="titolo-sezione">Parola ai nostri <em>atleti</em></h2>
+        </div>
+
+        <div class="recensioni-riepilogo rivela">
+          <div class="riepilogo-voto">
+            <p class="riepilogo-numero">4,9</p>
+            <span class="stelle stelle--grandi" role="img" aria-label="4,9 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+            <p class="riepilogo-totale">214 recensioni</p>
+          </div>
+          <ul class="riepilogo-barre" aria-label="Distribuzione dei voti">
+              <li><span>5</span><span class="barra"><span style="width: 88%"></span></span></li>
+              <li><span>4</span><span class="barra"><span style="width: 8%"></span></span></li>
+              <li><span>3</span><span class="barra"><span style="width: 2%"></span></span></li>
+              <li><span>2</span><span class="barra"><span style="width: 1%"></span></span></li>
+              <li><span>1</span><span class="barra"><span style="width: 1%"></span></span></li>
+          </ul>
+        </div>
+
+        <div class="recensioni">
+          <article class="recensione rivela">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Giulia Ferrari</h3>
+                <p class="recensione-meta">Local Guide · 38 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="5 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+              <span class="recensione-data">2 settimane fa</span>
+            </div>
+            <p class="recensione-testo">Frequento Titan Gym da un anno e non potrei essere più contenta. I coach sono preparatissimi e ti seguono davvero, anche nei corsi di gruppo. Il functional del martedì sera è diventato il mio appuntamento fisso: si suda tantissimo ma si esce carichi. Spogliatoi sempre puliti e attrezzatura nuova.</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">12</span>
+            </button>
+          </article>
+          <article class="recensione rivela" data-ritardo="1">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Marco Colombo</h3>
+                <p class="recensione-meta">5 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="5 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+              <span class="recensione-data">1 mese fa</span>
+            </div>
+            <p class="recensione-testo">Palestra seria per chi si allena con i pesi. Rack, bilancieri olimpici, dischi calibrati: c'è tutto. Marco (il coach di pesistica) mi ha sistemato la tecnica dello stacco in poche lezioni.</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+              <div class="recensione-risposta">
+                <p class="recensione-risposta-titolo">Risposta del proprietario <span>1 mese fa</span></p>
+                <p>Grazie Marco! Ci vediamo in sala pesi, e occhio a quel nuovo massimale 💪</p>
+              </div>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">8</span>
+            </button>
+          </article>
+          <article class="recensione rivela" data-ritardo="2">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Sara Bianchi</h3>
+                <p class="recensione-meta">Local Guide · 112 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="5 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+              <span class="recensione-data">1 mese fa</span>
+            </div>
+            <p class="recensione-testo">Le lezioni di yoga di Elena sono un'oasi di pace dopo il lavoro. Sala luminosa e silenziosa, tappetini e mattoncini forniti. Consigliatissimo anche a chi, come me, non aveva mai provato.</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">5</span>
+            </button>
+          </article>
+          <article class="recensione rivela">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Luca Romano</h3>
+                <p class="recensione-meta">14 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="4 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella stella--vuota"></span></span>
+              <span class="recensione-data">2 mesi fa</span>
+            </div>
+            <p class="recensione-testo">Ambiente super e corsi di boxe fatti bene, il maestro è bravo sia con i principianti che con chi vuole fare sparring. Unica pecca: il lunedì sera verso le 19 la sala pesi è molto affollata.</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+              <div class="recensione-risposta">
+                <p class="recensione-risposta-titolo">Risposta del proprietario <span>2 mesi fa</span></p>
+                <p>Ciao Luca, grazie del feedback! Da ottobre abbiamo ampliato la zona pesi con due nuovi rack proprio per gli orari di punta.</p>
+              </div>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">3</span>
+            </button>
+          </article>
+          <article class="recensione rivela" data-ritardo="1">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Chiara Esposito</h3>
+                <p class="recensione-meta">3 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="5 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+              <span class="recensione-data">3 mesi fa</span>
+            </div>
+            <p class="recensione-testo">Ho fatto la prova gratuita quasi per curiosità e mi sono iscritta il giorno stesso. Staff accogliente, orari comodissimi (aprono alle 6:30!) e prezzi onesti per quello che offrono.</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">6</span>
+            </button>
+          </article>
+          <article class="recensione rivela" data-ritardo="2">
+            <header class="recensione-autore">
+              <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="" class="recensione-foto" width="44" height="44" loading="lazy">
+              <div>
+                <h3 class="recensione-nome">Andrea Ricci</h3>
+                <p class="recensione-meta">Local Guide · 57 recensioni</p>
+              </div>
+            </header>
+            <div class="recensione-voto">
+              <span class="stelle" role="img" aria-label="5 stelle su 5"><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span><span class="stella"></span></span>
+              <span class="recensione-data">4 mesi fa</span>
+            </div>
+            <p class="recensione-testo">Il personal training con analisi della composizione corporea incluso nell'annuale vale da solo l'abbonamento. In sei mesi -8 kg e tanta forza in più. Grazie a tutto il team Titan!</p>
+            <button type="button" class="recensione-altro" hidden>Altro</button>
+            <button type="button" class="recensione-utile" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11M2 10h5v11H2zM7 10l4-8a3 3 0 0 1 3 3v4h6a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 18.6 21H7"/></svg>
+              Utile <span class="recensione-utile-conta">15</span>
+            </button>
+          </article>
+        </div>
+        <p class="credito-foto">Recensioni di esempio a scopo dimostrativo</p>
+      </div>
+    </section>
+
+    <!-- ========== CONTATTI ========== -->
+    <section class="sezione" id="contatti">
+      <div class="contenitore">
+        <div class="intestazione-sezione rivela">
+          <p class="etichetta-sezione">Contatti</p>
+          <h2 class="titolo-sezione">Vieni ad <em>allenarti</em></h2>
+        </div>
+
+        <div class="contatti">
+          <div class="contatti-info">
+            <div class="scheda rivela">
+              <h3>Dove siamo</h3>
+              <address>
+                <p>Viale Monza 120<br>20127 Milano (MI)</p>
+                <a href="tel:+390212345678" class="telefono">
+                  <span class="telefono-icona" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+                  </span>
+                  <span class="telefono-testo">
+                    <span class="telefono-etichetta">Chiamaci</span>
+                    <span class="telefono-numero">02 1234 5678</span>
+                  </span>
+                </a>
+                <p><a href="mailto:info@titangym.it">info@titangym.it</a></p>
+              </address>
+            </div>
+
+            <div class="scheda rivela" data-ritardo="1">
+              <h3>Orari</h3>
+              <table class="orari">
+                <tbody>
+                  <tr><th scope="row">Lunedì – Venerdì</th><td>06:30 – 23:00</td></tr>
+                  <tr><th scope="row">Sabato</th><td>08:00 – 20:00</td></tr>
+                  <tr><th scope="row">Domenica</th><td>09:00 – 14:00</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mappa rivela" data-ritardo="2">
+              <iframe
+                src="https://www.google.com/maps?q=Viale+Monza+120,+Milano&amp;output=embed"
+                title="Mappa: Titan Gym, Viale Monza 120, Milano"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <form class="modulo scheda rivela" data-ritardo="1" novalidate>
+            <h3>Scrivici</h3>
+            <p class="modulo-intro">Prenota la tua prova gratuita o chiedici informazioni: ti rispondiamo entro 24 ore.</p>
+
+            <div class="campo">
+              <label for="nome">Nome e cognome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required>
+              <span class="campo-errore" aria-live="polite"></span>
+            </div>
+
+            <div class="campi-affiancati">
+              <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <span class="campo-errore" aria-live="polite"></span>
+              </div>
+              <div class="campo">
+                <label for="telefono">Telefono <span class="facoltativo">(facoltativo)</span></label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+                <span class="campo-errore" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="motivo">Sono interessato a</label>
+              <select id="motivo" name="motivo">
+                <option value="prova">Prova gratuita</option>
+                <option value="mensile">Abbonamento mensile</option>
+                <option value="trimestrale">Abbonamento trimestrale</option>
+                <option value="annuale">Abbonamento annuale</option>
+                <option value="info">Informazioni generali</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" rows="4" required></textarea>
+              <span class="campo-errore" aria-live="polite"></span>
+            </div>
+
+            <div class="campo campo--spunta">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <label for="privacy">Acconsento al trattamento dei dati personali</label>
+              <span class="campo-errore" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="pulsante pulsante--neon"><span>Invia richiesta</span></button>
+            <p class="modulo-esito" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="contenitore pie-pagina-riga">
+      <a href="#home" class="logo">TITAN<span>GYM</span></a>
+      <p>Viale Monza 120, Milano &middot; <a href="tel:+390212345678">02 1234 5678</a></p>
+      <p>&copy; 2026 Titan Gym. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- Finestra per vedere le foto ingrandite (gestita da js/main.js) -->
+  <dialog class="lightbox" aria-label="Foto ingrandita">
+    <button type="button" class="lightbox-chiudi" aria-label="Chiudi">&times;</button>
+    <button type="button" class="lightbox-freccia lightbox-freccia--prec" aria-label="Foto precedente">&#8249;</button>
+    <figure class="lightbox-contenuto">
+      <img class="lightbox-immagine" alt="">
+      <figcaption class="lightbox-didascalia"></figcaption>
+    </figure>
+    <button type="button" class="lightbox-freccia lightbox-freccia--succ" aria-label="Foto successiva">&#8250;</button>
+  </dialog>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
