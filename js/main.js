@@ -317,3 +317,86 @@ modulo.addEventListener("submit", (evento) => {
   esito.textContent = `Grazie ${nome}! Abbiamo ricevuto la tua richiesta, ti contatteremo entro 24 ore.`;
   modulo.reset();
 });
+
+/* ---------- Cursore a manubrio (solo con mouse) ---------- */
+
+// Su touch e penne il cursore non esiste: lì resta tutto com'è
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  const cursore = document.createElement("div");
+  cursore.className = "cursore";
+  cursore.setAttribute("aria-hidden", "true");
+  cursore.innerHTML = `
+    <span class="cursore-punto"></span>
+    <span class="cursore-manubrio">
+      <svg viewBox="0 0 40 20" width="34" height="17">
+        <rect x="9" y="8.5" width="22" height="3" rx="1.5"/>
+        <rect x="5.5" y="2" width="5" height="16" rx="1.5"/>
+        <rect x="29.5" y="2" width="5" height="16" rx="1.5"/>
+        <rect x="1.5" y="5" width="4" height="10" rx="1.5"/>
+        <rect x="34.5" y="5" width="4" height="10" rx="1.5"/>
+      </svg>
+    </span>`;
+  document.body.appendChild(cursore);
+  document.documentElement.classList.add("cursore-attivo");
+
+  const punto = cursore.querySelector(".cursore-punto");
+  const manubrio = cursore.querySelector(".cursore-manubrio");
+  const cliccabili = 'a, button, [role="button"], [role="link"], label, select, summary, input[type="checkbox"], input[type="radio"], input[type="submit"]';
+  const campiTesto = 'input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea';
+
+  let mouseX = -100, mouseY = -100; // posizione reale del mouse
+  let x = mouseX, y = mouseY;       // posizione del manubrio, che la insegue
+  let animazione = null;
+
+  function muovi() {
+    // Il manubrio copre ogni fotogramma una parte della distanza: movimento morbido
+    x += (mouseX - x) * 0.25;
+    y += (mouseY - y) * 0.25;
+    if (Math.abs(mouseX - x) < 0.1 && Math.abs(mouseY - y) < 0.1) {
+      x = mouseX;
+      y = mouseY;
+      animazione = null; // fermo: il ciclo si spegne finché il mouse non si muove
+    } else {
+      animazione = requestAnimationFrame(muovi);
+    }
+    manubrio.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  }
+
+  document.addEventListener("pointermove", (evento) => {
+    if (evento.pointerType !== "mouse") return;
+    mouseX = evento.clientX;
+    mouseY = evento.clientY;
+    punto.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+    if (!cursore.classList.contains("visibile")) {
+      // Prima comparsa: il manubrio parte già sotto il mouse, senza "volare" dall'angolo
+      x = mouseX;
+      y = mouseY;
+      cursore.classList.add("visibile");
+    }
+    if (menoMovimento) {
+      x = mouseX;
+      y = mouseY;
+      manubrio.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    } else if (!animazione) {
+      animazione = requestAnimationFrame(muovi);
+    }
+  }, { passive: true });
+
+  // Un solo controllo quando il mouse entra in un nuovo elemento, non a ogni movimento
+  document.addEventListener("pointerover", (evento) => {
+    const bersaglio = evento.target;
+    cursore.classList.toggle("sopra-cliccabile", !!bersaglio.closest?.(cliccabili));
+    cursore.classList.toggle("sopra-testo", !!bersaglio.closest?.(campiTesto));
+  });
+
+  document.addEventListener("mouseleave", () => cursore.classList.remove("visibile"));
+  document.addEventListener("pointerdown", () => cursore.classList.add("premuto"));
+  document.addEventListener("pointerup", () => cursore.classList.remove("premuto"));
+
+  // La lightbox si apre nel "top layer", sopra a tutto: il cursore va spostato dentro
+  // la finestra della foto, altrimenti resterebbe nascosto dietro lo sfondo scuro
+  new MutationObserver(() => {
+    (lightbox.open ? lightbox : document.body).appendChild(cursore);
+  }).observe(lightbox, { attributes: true, attributeFilter: ["open"] });
+}

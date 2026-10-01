@@ -2085,6 +2085,86 @@ html:not(.js) .barra span {
   }
 }
 
+/* ---------- Cursore a manubrio ---------- */
+
+/* La classe viene aggiunta dal JS solo con un mouse: su touch nulla cambia.
+   Nei campi di testo resta il cursore a I nativo, più preciso per scrivere */
+.cursore-attivo,
+.cursore-attivo * {
+  cursor: none !important;
+}
+
+.cursore-attivo input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.cursore-attivo textarea {
+  cursor: text !important;
+}
+
+.cursore {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursore.visibile {
+  opacity: 1;
+}
+
+/* Il punto segna con precisione dove si clicca, il manubrio lo segue morbido */
+.cursore-punto,
+.cursore-manubrio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.cursore-punto {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background-color: var(--neon);
+  box-shadow: 0 0 0 1px var(--nero);
+}
+
+.cursore-manubrio {
+  width: 34px;
+  height: 17px;
+  margin: -8.5px 0 0 -17px;
+}
+
+/* Riempimento trasparente e contorno netto: il testo sotto resta leggibile */
+.cursore-manubrio svg {
+  display: block;
+  overflow: visible;
+  fill: rgba(198, 255, 0, 0.18);
+  stroke: var(--neon);
+  stroke-width: 1.6;
+  transform: rotate(-20deg);
+  filter: drop-shadow(0 0 3px rgba(198, 255, 0, 0.45));
+  transition: transform 0.35s var(--curva), filter 0.35s ease, fill 0.35s ease;
+}
+
+/* Sopra bottoni, link e card: il manubrio si "solleva", cresce e brilla di più */
+.cursore.sopra-cliccabile .cursore-manubrio svg {
+  fill: rgba(198, 255, 0, 0.3);
+  transform: rotate(-45deg) scale(1.35);
+  filter: drop-shadow(0 0 6px rgba(198, 255, 0, 0.8)) drop-shadow(0 0 14px rgba(198, 255, 0, 0.35));
+}
+
+.cursore.premuto .cursore-manubrio svg {
+  transform: rotate(-45deg) scale(1.1);
+  transition-duration: 0.12s;
+}
+
+.cursore.sopra-testo .cursore-manubrio,
+.cursore.sopra-testo .cursore-punto {
+  opacity: 0;
+}
+
 /* Chi preferisce meno movimento vede tutto subito, senza animazioni */
 @media (prefers-reduced-motion: reduce) {
   html {
